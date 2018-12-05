@@ -1,4 +1,4 @@
-FROM ruby:2.3
+FROM ruby:2.5
 
 RUN mkdir /users_ms
 WORKDIR /users_ms
