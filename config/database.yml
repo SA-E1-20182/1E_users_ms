@@ -16,7 +16,7 @@ default: &default
   username: root
   password: root123
   #host: localhost
-  host: users_db
+  host: 127.0.0.1
   socket: /var/run/mysqld/mysqld.sock
 
 development:
