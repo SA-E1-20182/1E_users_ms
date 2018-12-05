@@ -19,6 +19,9 @@ gem 'active_model_serializers'
 gem 'knock'
 gem 'jwt'
 
+#Gem for connect ldap
+gem 'net-ldap'
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 

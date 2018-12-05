@@ -1,0 +1,2 @@
+class LdapController < ApplicationController
+end
