@@ -3,7 +3,7 @@ services:
   users_db:
     image: mysql:5.7
     ports:
-      - "5434:5434"
+      - "3306:3306"
     environment:
       MYSQL_ROOT_PASSWORD: root123
       MYSQL_USER: user
@@ -11,7 +11,7 @@ services:
       MYSQL_DATABASE: users
   users_ms:
     build: .
-    command: bash -c "sleep 40 && bundle exec rake db:migrate && bundle exec rails s -p 3009 -b '0.0.0.0'"
+    #command: bash -c "sleep 4 && bundle exec rake db:migrate && bundle exec rails s -p 3009 -b '0.0.0.0'"
     ports:
       - "3009:3009"
     depends_on:
