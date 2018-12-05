@@ -17,19 +17,6 @@ class UsersController < ApplicationController
         render json: current_user
     end
     
-    private
-    
-    # Setting up strict parameters for when we add account creation.
-    def user_params
-        params.require(:user).permit(:username, :email, :password, :password_confirmation)
-    end
-    
-    # Adding a method to check if current_user can update itself. 
-    # This uses our UserModel method.
-    def authorize
-        return_unauthorized unless current_user && current_user.can_modify_user?(params[:id])
-    end
-
     # Method to create a new user using the safe params we setup.
     def create
         user = User.new(user_params)
@@ -53,5 +40,15 @@ class UsersController < ApplicationController
         render json: { status: 200, msg: 'User has been deleted.' }
         end
     end
-
+    
+    # Setting up strict parameters for when we add account creation.
+    def user_params
+        params.require(:user).permit(:username, :email, :password, :password_confirmation)
+    end
+    
+    # Adding a method to check if current_user can update itself. 
+    # This uses our UserModel method.
+    def authorize
+        return_unauthorized unless current_user && current_user.can_modify_user?(params[:id])
+    end
 end
