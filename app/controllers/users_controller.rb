@@ -25,7 +25,7 @@ class UsersController < ApplicationController
         # render json: {status: 200, msg: 'User was created.'}
         # end
         if @user.save
-            render json: @user, status: :created, location: @user
+            render json: {status: 200, msg: 'User was created.'}
         else
             render json: @user.errors, status: :unprocessable_entity
         end
