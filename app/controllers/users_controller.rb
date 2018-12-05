@@ -21,8 +21,13 @@ class UsersController < ApplicationController
     def create
         @user = User.new(user_params)
         @user.password = params[:password]
+        # if @user.save
+        # render json: {status: 200, msg: 'User was created.'}
+        # end
         if @user.save
-        render json: {status: 200, msg: 'User was created.'}
+            render json: @user, status: :created, location: @user
+        else
+            render json: @user.errors, status: :unprocessable_entity
         end
     end
     
