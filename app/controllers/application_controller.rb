@@ -1,5 +1,4 @@
 class ApplicationController < ActionController::API
-    skip_before_action :verify_authenticity_token
     # Include Knock within your application.
     include Knock::Authenticable
     
