@@ -3,7 +3,7 @@ class LdapController < ApplicationController
     def connect
         ldap = Net::LDAP.new(
             host: '35.197.61.102',
-            port: 8085,
+            port: 389,
             auth: {
                 method: :simple,
                 dn: "cn=admin,dc=arqsoft,dc=unal,dc=edu,dc=co",
@@ -20,7 +20,7 @@ class LdapController < ApplicationController
         if connect()
             ldap = Net::LDAP.new(
                 host: '35.197.61.102',
-                port: 8085,
+                port: 389,
                 auth: {
                     method: :simple,
                     dn: "cn=" + email + "@unal.edu.co, ou=krajono,dc=arqsoft,dc=unal,dc=edu,dc=co",
