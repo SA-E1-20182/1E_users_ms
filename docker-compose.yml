@@ -9,6 +9,7 @@ services:
       MYSQL_USER: user
       MYSQL_PASSWORD: pass123
       MYSQL_DATABASE: users
+      MYSQL_HOST: users_db
   users_ms:
     build: .
     #command: bash -c "sleep 4 && bundle exec rake db:migrate && bundle exec rails s -p 3009 -b '0.0.0.0'"
