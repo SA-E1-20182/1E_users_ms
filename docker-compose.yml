@@ -10,7 +10,6 @@ services:
       MYSQL_PASSWORD: 123
       MYSQL_DATABASE: users
       MYSQL_HOST: users_db
-    network_mode: "host"
   users_ms:
     build: .
     # command: bash -c "sleep 4 && bundle exec rake db:migrate && bundle exec rails s -p 3009 -b '0.0.0.0'"
@@ -20,4 +19,3 @@ services:
       - users_db
     links:
       - users_db
-    network_mode: "host"
