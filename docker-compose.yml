@@ -1,6 +1,6 @@
 version: '2'
 services:
-  users_db:
+  users-db:
     image: mysql:5.7
     ports:
       - "3306:3306"
@@ -9,13 +9,13 @@ services:
       MYSQL_USER: user
       MYSQL_PASSWORD: 123
       MYSQL_DATABASE: users
-      MYSQL_HOST: users_db
-  users_ms:
+      MYSQL_HOST: users-db
+  users-ms:
     build: .
     # command: bash -c "sleep 4 && bundle exec rake db:migrate && bundle exec rails s -p 3009 -b '0.0.0.0'"
     ports:
       - "3009:3009"
     depends_on:
-      - users_db
+      - users-db
     links:
-      - users_db
+      - users-db
