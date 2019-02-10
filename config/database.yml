@@ -15,7 +15,7 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: root
   password: 123
-  host: users_db
+  host: users-db
   socket: /var/run/mysqld/mysqld.sock
 
 development:
@@ -27,7 +27,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: users_ms_test
+  database: users-ms_test
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -50,6 +50,6 @@ test:
 #
 production:
   <<: *default
-  database: users_ms_production
-  username: user_ms
+  database: users-ms_production
+  username: user-ms
   password: <%= ENV['USER_MS_DATABASE_PASSWORD'] %>
